@@ -1,0 +1,14 @@
+<view class='list'>
+  <view class="list-type">
+    <view class="type-title">
+      <text>{{ films.title }}</text>
+    </view>
+    <view class="film-list">
+      <film-item class='film-item' wx:for='{{ films.list }}' film='{{ item }}' wx:key='index'></film-item>
+    </view>
+  </view>
+  <!-- 显示loading正在加载 -->
+  <include wx:if='{{ showLoading }}' src='/templates/loading/loading.wxml'/>
+  <!-- 显示nomore没有更多数据 -->
+  <include wx:if='{{ showNomore }}' src='/templates/nomore/nomore.wxml'/>
+</view>

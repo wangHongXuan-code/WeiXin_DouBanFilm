@@ -1,0 +1,10 @@
+<navigator url='../../pages/detail/detail?filmId={{ film.id }}'>
+  <image class="film-img" src="{{ film.cover.url }}"></image>
+  <view class="film-name">{{ film.title }}</view>
+  <view class="film-star">
+    <image class="star-img" src="{{ tools.starImg(index,film.rating.value) }}" wx:for="{{ 5 }}" wx:key='index'></image>
+    <text class="film-source">{{ film.rating.value }}</text>
+  </view>
+</navigator>
+
+<wxs src='../../utils/tools.wxs' module='tools'></wxs>
